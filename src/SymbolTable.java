@@ -8,13 +8,17 @@ public class SymbolTable {
 
     // TEMP BELOW!
 
-    public static void main(String[] args) {
-        SymbolTable st = new SymbolTable();
-        for (int i = 0; i < 1_000_000; ++i) {
-            st.countSymbol((byte)(256*Math.random()));
-        }
-        st.printTable();
-    }
+    // public static void main(String[] args) {
+    //     SymbolTable st = new SymbolTable();
+    //     for (int i = 0; i < 1_000_000; ++i) {
+    //         st.countSymbol((byte)(256*Math.random()));
+    //     }
+    //     // st.printTable();
+    //     Symbol[] symbolArray = st.getSymbolsByFrequency();
+    //     for (Symbol symbol: symbolArray) {
+    //         System.out.println(byteToBinaryString(symbol.getValue()) + " : " + symbol.getFrequency());
+    //     }
+    // }
 
     // TEMP ABOVE!
 
@@ -63,13 +67,23 @@ public class SymbolTable {
         this.symbolList.add(index, new Symbol(value, 1));
     }
 
-    private void printTable() {
+    public void printTable() {
             System.out.println("Value        Frequency");
         int i = 0;
         while (i < this.symbolList.size()) {
             System.out.println(byteToBinaryString(this.symbolList.get(i).getValue()) + " : " + this.symbolList.get(i).getFrequency());
             ++i;
         }
+    }
+
+    public Symbol[] getSymbolsByFrequency() {
+        ArrayList<Symbol> symbolListDuplicate = new ArrayList<Symbol>(this.symbolList);
+        symbolListDuplicate.sort(
+            (a, b) -> {
+                return((int)(b.getFrequency() - a.getFrequency()));
+            }
+        );
+        return(symbolListDuplicate.toArray(new Symbol[0]));
     }
 
     public static String byteToBinaryString(byte b) {

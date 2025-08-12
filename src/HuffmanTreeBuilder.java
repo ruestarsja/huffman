@@ -9,7 +9,7 @@ public class HuffmanTreeBuilder {
     // public static void main(String[] args) {
     //     SymbolTable st = new SymbolTable();
     //     for (int i = 0; i < 1_000_000; ++i) {
-    //         st.countSymbol((byte)(256*Math.random()));
+    //         st.countSymbol(256*Math.random());
     //     }
     //     st.printTable();
     //     HuffmanNode huffmanTree = symbolTableToTree(st);
@@ -48,7 +48,7 @@ public class HuffmanTreeBuilder {
 
     public static ArrayList<HuffmanNode> insertTree(HuffmanNode tree, ArrayList<HuffmanNode> treeList) {
         int i = 0;
-        while (i < treeList.size() && treeList.get(i).getFrequency() < tree.getFrequency()) {
+        while (i < treeList.size() && treeList.get(i).getFrequency() > tree.getFrequency()) {
             ++i;
         }
         treeList.add(i, tree);

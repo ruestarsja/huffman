@@ -11,5 +11,7 @@ abstract class HuffmanNode {
     public long getFrequency() {
         return(this.frequency);
     }
-    
+
+    abstract String getHuffmanCode(int value);
+
 }

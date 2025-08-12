@@ -19,4 +19,17 @@ public class HuffmanMiddleNode extends HuffmanNode {
         return(this.rightChild);
     }
 
+    public String getHuffmanCode(int value) {
+        boolean right = false;
+        String code = this.leftChild.getHuffmanCode(value);
+        if (code == null) {
+            right = true;
+            code = this.rightChild.getHuffmanCode(value);
+        }
+        if (code != null) {
+            code = (right ? "1" : "0") + code;
+        }
+        return(code);
+    }
+
 }

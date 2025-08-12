@@ -2,12 +2,12 @@ package src;
 
 public class Symbol extends HuffmanNode {
     
-    private byte value;
+    private int value;
 
-    public Symbol(byte value) {
+    public Symbol(int value) {
         this(value, 0);
     }
-    public Symbol(byte value, long frequency) {
+    public Symbol(int value, long frequency) {
         this.value = value;
         this.frequency = frequency;
     }
@@ -19,12 +19,20 @@ public class Symbol extends HuffmanNode {
         this.frequency += instances;
     }
 
-    public byte getValue() {
+    public int getValue() {
         return(this.value);
     }
 
     public void setFrequency(long frequency) {
         this.frequency = frequency;
+    }
+
+    public String getHuffmanCode(int value) {
+        if (this.value == value) {
+            return("");
+        } else {
+            return(null);
+        }
     }
 
 }

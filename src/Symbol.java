@@ -3,7 +3,6 @@ package src;
 public class Symbol extends HuffmanNode {
     
     private byte value;
-    private long frequency;
 
     public Symbol(byte value) {
         this(value, 0);
@@ -18,10 +17,6 @@ public class Symbol extends HuffmanNode {
     }
     public void count(long instances) {
         this.frequency += instances;
-    }
-
-    public long getFrequency() {
-        return(this.frequency);
     }
 
     public byte getValue() {

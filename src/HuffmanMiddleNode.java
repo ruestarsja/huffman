@@ -8,6 +8,7 @@ public class HuffmanMiddleNode extends HuffmanNode {
     public HuffmanMiddleNode(HuffmanNode leftChild, HuffmanNode rightChild) {
         this.leftChild = leftChild;
         this.rightChild = rightChild;
+        this.frequency = leftChild.getFrequency() + rightChild.getFrequency();
     }
 
     public HuffmanNode getLeft() {

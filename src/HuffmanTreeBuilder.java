@@ -3,33 +3,6 @@ package src;
 import java.util.ArrayList;
 
 public class HuffmanTreeBuilder {
-
-    // TEMP BELOW!
-
-    // public static void main(String[] args) {
-    //     SymbolTable st = new SymbolTable();
-    //     for (int i = 0; i < 1_000_000; ++i) {
-    //         st.countSymbol(256*Math.random());
-    //     }
-    //     st.printTable();
-    //     HuffmanNode huffmanTree = symbolTableToTree(st);
-    //     ArrayList<HuffmanNode> bfQueue = new ArrayList<HuffmanNode>();
-    //     bfQueue.add(huffmanTree);
-    //     while (bfQueue.size() != 0) {
-    //         HuffmanNode node = bfQueue.removeFirst();
-    //         if (node instanceof HuffmanMiddleNode) {
-    //             HuffmanMiddleNode midNode = (HuffmanMiddleNode) node; // OK because it's already a HuffmanMiddleNode
-    //             System.out.println("*");
-    //             bfQueue.add(midNode.getLeft());
-    //             bfQueue.add(midNode.getRight());
-    //         } else if (node instanceof Symbol) {
-    //             Symbol symbol = (Symbol) node; // OK because it's already a Symbol
-    //             System.out.println(SymbolTable.byteToBinaryString(symbol.getValue()) + " : " + symbol.getFrequency());
-    //         }
-    //     }
-    // }
-
-    // TEMP ABOVE!
     
     public static HuffmanNode symbolTableToTree(SymbolTable symbolTable) {
         Symbol[] symbolArray = symbolTable.getSymbolsByFrequency();

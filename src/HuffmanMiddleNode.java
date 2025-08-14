@@ -29,7 +29,7 @@ public class HuffmanMiddleNode extends HuffmanNode {
         if (code != null) {
             code = (right ? "1" : "0") + code;
         }
-        return(code);
+        return(code); // will be null if both children return null
     }
 
 }
